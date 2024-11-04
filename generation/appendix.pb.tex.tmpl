@@ -2,7 +2,7 @@
 {{ range . }}
 
 \subsection{ {{- .Name -}} }
-{\small\texttt{ {{- .Path -}} }}
+{\footnotesize\texttt{ {{- .Path -}} }}
 \begin{lstlisting}{{ if .Lang }}[language={{ .Lang }}]{{ end }}
 {{ .Content }}
 \end{lstlisting}
