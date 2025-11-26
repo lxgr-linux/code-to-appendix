@@ -46,7 +46,7 @@ filesLoop:
 		model = append(model, File{
 			Lang:    Map(format),
 			Path:    cleanPath(name),
-			Name:    splidPath[len(splidPath)-1],
+			Name:    cleanTitle(splidPath[len(splidPath)-1]),
 			Content: string(content),
 		})
 	}
@@ -75,5 +75,13 @@ func getFormat(name string) string {
 }
 
 func cleanPath(path string) string {
-	return strings.Replace(strings.TrimPrefix(path, "./"), "_", "\\textunderscore ", -1)
+	return cleanName(strings.TrimPrefix(path, "./"))
+}
+
+func cleanName(name string) string {
+	return strings.ReplaceAll(name, "_", "\\string_")
+}
+
+func cleanTitle(name string) string {
+	return strings.ReplaceAll(name, "_", "\\textunderscore{}")
 }

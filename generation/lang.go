@@ -1,6 +1,6 @@
 package generation
 
-var mapping = map[string]string{"java": "java", "py": "Python", "xml": "XML", "sh": "bash"}
+var mapping = map[string]string{"java": "java", "py": "Python", "xml": "XML", "sh": "bash", "go": "go"}
 
 func Map(format string) string {
 	f, ok := mapping[format]
