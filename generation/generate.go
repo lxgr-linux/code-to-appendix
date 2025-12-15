@@ -48,6 +48,7 @@ filesLoop:
 			Path:    cleanPath(name),
 			Name:    cleanTitle(splidPath[len(splidPath)-1]),
 			Content: string(content),
+			Prefix:  cfg.Prefix,
 		})
 	}
 

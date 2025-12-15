@@ -4,6 +4,7 @@ type Config struct {
 	OutputFile     string   `yaml:"outputFile"`
 	ExcludeFiles   []string `yaml:"excludeFiles"`
 	ExcludeFormats []string `yaml:"excludeFormats"`
+	Prefix         *string  `yaml:"prefix"`
 }
 
 func Default() *Config {

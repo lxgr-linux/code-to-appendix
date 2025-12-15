@@ -5,6 +5,7 @@ type File struct {
 	Path    string
 	Name    string
 	Content string
+	Prefix  *string
 }
 
 type Model []File
