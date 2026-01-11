@@ -3,6 +3,7 @@ package generation
 import (
 	"bytes"
 	_ "embed"
+	"log/slog"
 	"os"
 	"regexp"
 	"slices"
@@ -50,6 +51,10 @@ filesLoop:
 			Content: string(content),
 			Prefix:  cfg.Prefix,
 		})
+	}
+
+	for _, m := range model {
+		slog.Info(m.Name)
 	}
 
 	tmpl, err := template.New("appendix").Parse(appendixTmpl)
